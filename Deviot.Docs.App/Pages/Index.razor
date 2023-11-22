@@ -1,0 +1,41 @@
+﻿@using Deviot.Docs.App.Interfaces;
+@using Deviot.Docs.App.Models;
+
+@page "/"
+@inject ISummaryService _summaryService;
+
+<PageTitle>Home</PageTitle>
+
+<RadzenMediaQuery Query="(max-width: 1300px)" Change=@((value) => _isSmall = value) />
+<RadzenStack AlignItems="AlignItems.Center">
+
+    @if (_isSmall)
+    {
+        <RadzenImage Path="./images/knowledge.svg" Style="width: 18rem;" class="rz-mb-4" />
+    }
+    else
+    {
+        <RadzenImage Path="./images/knowledge.svg" Style="width: 32rem;" class="rz-mb-6" />
+    }
+    
+    <RadzenStack AlignItems="AlignItems.Center">
+        <RadzenText TextStyle="TextStyle.H2">
+            Como podemos te ajudar?
+        </RadzenText>
+        <RadzenText TextStyle="TextStyle.Body1" TextAlign="TextAlign.Center" class="rz-mb-6">
+            Pesquise ou navegue em artigos detalhados sobre tudo, desde a configuração básica até recursos avançados de uso diário...
+        </RadzenText>
+        <RadzenAutoComplete @bind-Value=@_value Change=@OnChange Data=@_summaryList TextProperty="Description" Style="width: 140%" />
+    </RadzenStack>
+</RadzenStack>
+
+@code {
+    private bool _isSmall;
+    private string _value;
+    private List<SummaryModel> _summaryList;
+
+    private void OnChange()
+    {
+        
+    }
+}

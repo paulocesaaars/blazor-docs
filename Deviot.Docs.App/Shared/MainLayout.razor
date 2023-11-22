@@ -1,0 +1,55 @@
+﻿@inherits LayoutComponentBase
+
+<RadzenLayout>
+   
+    <RadzenBody>
+        <div class="container">
+            <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center" JustifyContent="JustifyContent.SpaceBetween">
+                <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center" JustifyContent="JustifyContent.Left">
+                    <RadzenStack>
+                        <RadzenText TextStyle="TextStyle.H5">
+                            DEVIOT - DOCS
+                        </RadzenText>
+                    </RadzenStack>
+                    <RadzenStack>
+                        <RadzenLink Path="/" Text="Voltar para home">
+                            <RadzenText TextStyle="TextStyle.Body2">
+                                Home
+                            </RadzenText>
+                        </RadzenLink>
+                        
+                    </RadzenStack>
+                    <RadzenStack>
+                        <RadzenLink Path="/documentation" Text="Voltar para home">
+                            <RadzenText TextStyle="TextStyle.Body2">
+                                Documentação
+                            </RadzenText>
+                        </RadzenLink>
+                    </RadzenStack>
+                    <RadzenStack>
+                        <RadzenLink Path="/blog" Text="Voltar para home">
+                            <RadzenText TextStyle="TextStyle.Body2">
+                                Blog
+                            </RadzenText>
+                        </RadzenLink>
+                    </RadzenStack>
+                </RadzenStack>
+                <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center" JustifyContent="JustifyContent.Left">
+                    <RadzenStack>
+                        <RadzenLink Path="/contact" Text="Voltar para home">
+                            <RadzenButton Text="Contatos" ButtonStyle="ButtonStyle.Primary" Size="ButtonSize.Small" />
+                        </RadzenLink>
+                        
+                    </RadzenStack>
+                </RadzenStack>
+            </RadzenStack>
+            <RadzenStack>
+                @Body
+            </RadzenStack>
+        </div>
+        
+    </RadzenBody>
+</RadzenLayout>
+
+@code {
+}
